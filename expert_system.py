@@ -1,3 +1,7 @@
+
+import sys
+sys.path.insert(0, './models')
+
 from fact import *
 from hypothese import *
 from system import *
