@@ -17,11 +17,11 @@ print('## Hypotheses : ')
 print(hypotheses)
 print('\n')
 for h in hypotheses:
-    for eq in system.eqs:
-        if h.hyp in eq.premisse:
-            eq.premisse.remove(h.hyp)
+    for eq in system.get_system():
+        if h.get_hypothese() in eq.get_premisse():
+            eq.get_premisse().remove(h.get_hypothese())
             if eq.is_premisse_empty():
-                hypotheses.append(Hypothese(eq.conclusion))
+                hypotheses.append(Hypothese(eq.get_conclusion()))
 print('## Result : ')
 print('Hypotheses : ')
 print(hypotheses)
