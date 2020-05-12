@@ -14,4 +14,4 @@ class Equation:
         return not self.__premisse
 
     def __str__(self):
-        return str(self.__premisse) + ' => ' + self.__conclusion
+        return  '^'.join(map(str, self.__premisse)) + ' => ' + self.__conclusion
