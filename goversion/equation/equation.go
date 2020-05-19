@@ -10,7 +10,7 @@ type Equation struct {
 	conclusion string
 }
 
-func (e Equation) FindFactInPrem(h Hypothese) int {
+func (e Equation) FindHypInPrem(h Hypothese) int {
 	for k, v := range e.Premisse {
 		if v == h {
 			return k
@@ -19,8 +19,8 @@ func (e Equation) FindFactInPrem(h Hypothese) int {
 	return -1
 }
 
-func (e *Equation) RmFactOfPrem(h Hypothese) {
-	i := e.FindFactInPrem(h)
+func (e *Equation) RmHypOfPrem(h Hypothese) {
+	i := e.FindHypInPrem(h)
 
 	e.Premisse = append(e.Premisse[:i], e.Premisse[i+1:]...)
 }

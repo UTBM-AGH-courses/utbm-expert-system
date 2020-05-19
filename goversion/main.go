@@ -22,9 +22,9 @@ func main() {
 
 		for key, eq := range systeme.Eq {
 
-			if eq.FindFactInPrem(h) != -1 {
+			if eq.FindHypInPrem(h) != -1 {
 
-				eq.RmFactOfPrem(h)
+				eq.RmHypOfPrem(h)
 				systeme.Eq[key] = eq
 
 				if len(eq.Premisse) == 0 {
