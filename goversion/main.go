@@ -2,70 +2,40 @@ package main
 
 import (
 	"fmt"
+
+	. "primitivo.fr/applinh/expert_system/equation"
+	. "primitivo.fr/applinh/expert_system/hypothese"
+	. "primitivo.fr/applinh/expert_system/system"
 )
-
-type Fact struct {
-	fact string
-}
-
-type Equation struct {
-	name       string
-	premisse   []Fact
-	conclusion string
-}
-
-func (e Equation) findFactInPrem(f Fact) int {
-	for k, v := range e.premisse {
-		if v == f {
-			return k
-		}
-	}
-	return -1
-}
-
-func (e *Equation) rmFactOfPrem(f Fact) {
-	i := e.findFactInPrem(f)
-
-	e.premisse = append(e.premisse[:i], e.premisse[i+1:]...)
-}
-
-// func (e Equation) toStr() string {
-// 	return e.name + " : " + e.premisse + " => " + e.conclusion
-
-// }
-
-type Systeme struct {
-	eq []Equation
-}
 
 func main() {
 	fmt.Println("Hello !")
 
-	facts := []Fact{{fact: "A"}, {fact: "B"}}
+	hypotheses := []Hypothese{*NewHypothese("A"), *NewHypothese("B")}
 
-	eq1 := Equation{name: "eq1", premisse: []Fact{{fact: "A"}, {fact: "B"}}, conclusion: "X"}
-	eq2 := Equation{name: "eq2", premisse: []Fact{{fact: "D"}, {fact: "E"}}, conclusion: "Z"}
+	eq1 := NewEquation("eq1", []Hypothese{*NewHypothese("A"), *NewHypothese("B")}, "X")
+	eq2 := NewEquation("eq2", []Hypothese{*NewHypothese("D"), *NewHypothese("E")}, "Z")
 
-	systeme := Systeme{eq: []Equation{eq1, eq2}}
+	systeme := NewSysteme([]Equation{*eq1, *eq2})
 
-	for _, f := range facts {
+	for _, h := range hypotheses {
 
-		for key, eq := range systeme.eq {
+		for key, eq := range systeme.Eq {
 
-			if eq.findFactInPrem(f) != -1 {
+			if eq.FindFactInPrem(h) != -1 {
 
-				eq.rmFactOfPrem(f)
-				systeme.eq[key] = eq
+				eq.RmFactOfPrem(h)
+				systeme.Eq[key] = eq
 
-				if len(eq.premisse) == 0 {
+				if len(eq.Premisse) == 0 {
 
-					facts = append(facts, Fact{fact: eq.conclusion})
+					hypotheses = append(hypotheses, *NewHypothese(eq.GetConclusion()))
 				}
 			}
 
 		}
 	}
 
-	fmt.Println(facts)
+	fmt.Println(hypotheses)
 
 }
