@@ -1,0 +1,22 @@
+{
+    "facts":["A","B","D"],
+    "rules":[
+        {
+            "name":"eq1",
+            "hypotheses":["A","B"],
+            "conclusion":"X"
+        },
+        {
+            "name":"eq2",
+            "hypotheses":["D","X"],
+            "conclusion":"Z"
+        },
+        {
+            "name":"eq3",
+            "hypotheses":["A","O", "J"],
+            "conclusion":"Q"
+        }
+
+
+    ]
+}
