@@ -6,12 +6,12 @@ from file_processor.hypothese_file_processor import HypotheseFileProcessor
 from file_processor.system_file_processor import SystemFileProcessor
 
 # Open the hypotheses file
-hypotheseIO = HypotheseFileProcessor("hypotheses.txt")
+hypotheseIO = HypotheseFileProcessor("facts.txt")
 # Get the hypotheses
 hypotheses = hypotheseIO.get_hypotheses()
 
 # Open the system file
-systemIO = SystemFileProcessor("system.txt")
+systemIO = SystemFileProcessor("rules.txt")
 # Get the system
 system = systemIO.get_system()
 
@@ -27,7 +27,7 @@ for h in hypotheses:
 # Display result
 print('######## Results ######## ')
 print()
-print('### System ###')
+print('### Rules ###')
 print(system)
-print('### True elements ###')
+print('### Facts ###')
 print(hypotheses)
