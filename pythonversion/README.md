@@ -8,6 +8,15 @@ Little expert system developed in Python
 
 2. Clone the repository
 
+**OR**
+
+## Run It With Docker
+
+Will run using the `facts.txt` and `rules.txt` at the root of the repo.
+
+- `docker pull docker.pkg.github.com/vareversat/expert-system/pythonexpert:latest`
+- `docker run -it docker.pkg.github.com/vareversat/expert-system/pythonexpert:latest`
+
 ## Use it ⚙️
 Two files are important here :
 - `facts.txt` : References all the facts of our system. You can add new facts in the file **(separated with commas and without space)**
@@ -55,9 +64,4 @@ Example of output :
 
 Letters surrounded by an hyphen (`-D-`) are marked. It's mean that the fact is already `true` or became `true` (example : `-D- ^ -E- => -Z-`. Here `Z` became `true` because `D` and `E` were `true` )
 
-## Run It With Docker
 
-Will run with using the `facts.txt` and `rules.txt` at the root of the repo.
-
-- `docker pull docker.pkg.github.com/vareversat/expert-system/pythonexpert:latest`
-- `docker run -it docker.pkg.github.com/vareversat/expert-system/pythonexpert:latest`
