@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  dockergoexpert:
+  docker-expert:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -21,7 +21,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: GithubPackages-Docker
+    - name: GithubPackages-Docker-GOVERSION
       uses: matootie/github-docker@v3.0.0
       with:
         # Access token which is used to deploy the image to the repository.
@@ -29,3 +29,11 @@ jobs:
         context: ./goversion
         # Name for the docker image
         imageName: goexpert
+    - name: GithubPackages-Docker-PYTHONVERSION
+      uses: matootie/github-docker@v3.0.0
+      with:
+        # Access token which is used to deploy the image to the repository.
+        accessToken:  ${{ secrets.GITHUB_TOKEN }}
+        context: ./pythonversion
+        # Name for the docker image
+        imageName: pythonexpert
