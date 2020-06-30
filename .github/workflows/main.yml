@@ -22,11 +22,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: GithubPackages-Docker
-      uses: Kolkies/githubpackages-docker@v1.0.4
+      uses: craftech-io/package-action@v3.1.0
       
       with:
         # Access token which is used to deploy the image to the repository.
-        repo-token:  ${{ secrets.GITHUB_TOKEN }}
+        access_token:  ${{ secrets.GITHUB_TOKEN }}
         context: ./goversion 
         # Name for the docker image
         image-name: GoExpert
