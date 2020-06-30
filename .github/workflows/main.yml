@@ -26,6 +26,6 @@ jobs:
       with:
         # Access token which is used to deploy the image to the repository.
         access_token:  ${{ secrets.GITHUB_TOKEN }}
-        context: ./goversion/ 
+        context: ./goversion/Dockerfile 
         # Name for the docker image
         image_name: goexpert
