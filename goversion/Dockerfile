@@ -14,4 +14,4 @@ COPY . .
 RUN go build -o expert .
 
 
-# CMD ["./expert config.json"]
+CMD ["./expert", "config.json"]
