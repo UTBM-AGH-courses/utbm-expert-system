@@ -11,7 +11,7 @@ Using OOP paradigm
 
 ## Python 
 
-Have a look at the `Readme.md` in the `pythonversion` folder.
+Have a look at the `Readme.md` in the `pythonversion` folder ([here](./pythonversion/readme.md)).
 
 ## Golang
 

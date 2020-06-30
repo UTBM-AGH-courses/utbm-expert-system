@@ -1,5 +1,5 @@
 # Expert system
-Little expert system develop in Python
+Little expert system developed in Python
 
 ## Requirements 🖥️
 1. Install Python3 :
