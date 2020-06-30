@@ -26,6 +26,7 @@ jobs:
     - name: GithubPackages-Docker
       uses: Kolkies/githubpackages-docker@v1.0.4
       with:
+        working-directory: ${{env.working-directory}}
         # Access token which is used to deploy the image to the repository.
         repo-token:  ${{ secrets.GITHUB_TOKEN }}
         # Name for the docker image
