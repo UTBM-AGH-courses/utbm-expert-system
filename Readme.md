@@ -11,8 +11,8 @@ Using OOP paradigm for both.
 
 ## Python 
 
-Have a look at the `Readme.md` in the `pythonversion` folder ([here](./tree/master/pythonversion)).
+Have a look at the `Readme.md` in the `pythonversion` folder ([here](https://github.com/vareversat/expert-system/tree/master/pythonversion)).
 
 ## Golang
 
-Have a look at the `Readme.md` in the `goversion` folder ([here](./tree/master/goversion)).
+Have a look at the `Readme.md` in the `goversion` folder ([here](https://github.com/vareversat/expert-system/tree/master/goversion)).
