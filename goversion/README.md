@@ -10,9 +10,11 @@ There's already a filled `config.json` so just use the same pattern.
 
 ### With Docker
 
+Will run with using the `config.json` at the root of the repo.
+
 - `docker pull docker.pkg.github.com/vareversat/expert-system/goexpert:latest`
 - `docker run -it docker.pkg.github.com/vareversat/expert-system/goexpert:latest`
-- `./expert config.json`
+
 
 ### With Go
 After cloning the repo (and installing Go of course):
