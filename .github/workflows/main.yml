@@ -29,4 +29,4 @@ jobs:
         access_token:  ${{ secrets.GITHUB_TOKEN }}
         context: ./goversion 
         # Name for the docker image
-        image-name: GoExpert
+        image_name: goexpert
