@@ -23,10 +23,9 @@ jobs:
       uses: actions/checkout@v2
     - name: GithubPackages-Docker
       uses: craftech-io/package-action@v3.1.0
-      
       with:
         # Access token which is used to deploy the image to the repository.
         access_token:  ${{ secrets.GITHUB_TOKEN }}
-        context: goversion 
+        context: /home/runner/work/expert-system/goversion 
         # Name for the docker image
         image_name: goexpert
